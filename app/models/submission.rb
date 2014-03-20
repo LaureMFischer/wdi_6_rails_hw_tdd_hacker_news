@@ -10,4 +10,9 @@ class Submission < ActiveRecord::Base
   def vote_count
     self.votes.where(direction: true).count
   end
+
+  def submitter_email
+    self.user.email
+  end
+
 end
